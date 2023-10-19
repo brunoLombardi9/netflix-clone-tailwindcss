@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 import NavButtonsAuthenticated from "./NavButtonsAuthenticated";
 import NavButtonsNotAuthenticated from "./NavButtonsNotAuthenticated";
+import NetflixLogo from "./NetflixLogo";
 
 const Navbar = () => {
   const userMethods = UserAuth();
@@ -21,9 +22,7 @@ const Navbar = () => {
   return (
     <div className="flex items-center justify-between p-4 z-[100] absolute w-full">
       <Link to="/">
-        <h1 className="text-red-600 text-4xl font-bold cursor-pointer">
-          NETFLIX
-        </h1>
+        <NetflixLogo/>
       </Link>
       {userMethods?.user?.email ? (
         <NavButtonsAuthenticated handleLogout={handleLogout} />
